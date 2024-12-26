@@ -8,7 +8,11 @@ pluginManagement {
             }
         }
         mavenCentral()
+        mavenLocal()
         gradlePluginPortal()
+        maven {
+            url = uri( "https://github.com/QuickBlox/quickblox-android-sdk-releases/raw/master/")
+        }
     }
 }
 dependencyResolutionManagement {
@@ -16,6 +20,14 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
+        maven {
+            url = uri("https://jitpack.io")
+        }
+        maven { url = uri("https://maven.google.com") }
+        maven {
+            url = uri( "https://github.com/QuickBlox/quickblox-android-sdk-releases/raw/master/")
+        }
     }
 }
 
