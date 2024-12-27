@@ -33,7 +33,7 @@ android {
             packageLibraryProvider {
                 val separator = "_"
                 val buildTypeName = buildType.name
-                val versionName = "1.0.1"
+                val versionName = "1.1"
                 val date = Date()
                 val formattedDate = SimpleDateFormat("ddMMyy_HHmm").format(date)
                 val newAarName = "StickyHeaderRecyclerView$separator$formattedDate$separator$buildTypeName$separator$versionName.aar"
@@ -57,7 +57,7 @@ publishing {
         create<MavenPublication>("release") {
             groupId = "com.github.nanoo.developer"
             artifactId = "StickyHeaderRecyclerView"
-            version = "1.0.1"
+            version = "1.1"
             pom{
                 description = "Sticky Header Recycler View Library"
             }
