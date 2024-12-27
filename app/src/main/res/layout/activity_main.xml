@@ -2,30 +2,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffbef0ff"
     tools:context="com.nanoo.stickyheaderrecycler.MainActivity">
 
     <LinearLayout
         android:id="@+id/buttons_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="18dp"
-        android:paddingBottom="18dp">
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="8dp"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/button_update"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
             android:layout_weight="1"
             android:text="@string/button_update" />
 
-        <ToggleButton
+        <Button
             android:id="@+id/button_is_reverse"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
             android:layout_weight="1"
-            android:textOff="@string/button_reverse"
-            android:textOn="@string/button_reverse" />
+            android:text="@string/ascending" />
 
     </LinearLayout>
 
@@ -34,9 +36,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/buttons_container"
-        android:background="#ffbef0ff"
         android:clipToPadding="true"
-        android:padding="16dp"
+        android:padding="8dp"
         android:saveEnabled="false" />
 
 </RelativeLayout>

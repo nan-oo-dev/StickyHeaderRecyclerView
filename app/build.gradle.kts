@@ -53,4 +53,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    // Chat Message Library
+//    implementation ("com.github.nan-oo-dev:StickyHeaderRecyclerView:1.0.1")
+
+
 }

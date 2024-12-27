@@ -1,8 +1,5 @@
 package com.nanoo.stickyheaderrecycler
 
-//import com.nanoo.stickyheaderrecyclerview.StickyRecyclerHeadersAdapter
-//import com.nanoo.stickyheaderrecyclerview.StickyRecyclerHeadersDecoration
-//import com.nanoo.stickyheaderrecyclerview.StickyRecyclerHeadersTouchListener
 import android.annotation.SuppressLint
 import android.content.pm.ActivityInfo
 import android.graphics.Color
@@ -12,10 +9,8 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -30,16 +25,13 @@ import java.security.SecureRandom
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var isReverse = false
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val recyclerView = findViewById<View>(R.id.recyclerview) as RecyclerView
-        val button = findViewById<View>(R.id.button_update) as Button
-        val isReverseButton = findViewById<View>(R.id.button_is_reverse) as ToggleButton
 
         // Set adapter populated with example dummy data
         val adapter = AnimalsHeadersAdapter()
@@ -59,8 +51,10 @@ class MainActivity : AppCompatActivity() {
         // Set layout manager
         val orientation = getLayoutManagerOrientation(resources.configuration.orientation)
         val layoutManager =
-            LinearLayoutManager(this, orientation, binding.buttonIsReverse.isChecked)
+            LinearLayoutManager(this, orientation, isReverse)
         binding.recyclerview.layoutManager = layoutManager
+
+        binding.buttonIsReverse.text = getString(R.string.ascending)
 
         // Add the sticky headers decoration
         val headersDecor = StickyRecyclerHeadersDecoration(adapter)
@@ -98,9 +92,14 @@ class MainActivity : AppCompatActivity() {
         })
 
         binding.buttonIsReverse.setOnClickListener {
-            val isChecked = binding.buttonIsReverse.isChecked
-            binding.buttonIsReverse.isChecked = isChecked
-            layoutManager.setReverseLayout(isChecked)
+            if (binding.buttonIsReverse.text == getString(R.string.ascending)) {
+                binding.buttonIsReverse.text = getString(R.string.descending)
+                isReverse = true
+            } else {
+                binding.buttonIsReverse.text = getString(R.string.ascending)
+                isReverse = false
+            }
+            layoutManager.setReverseLayout(isReverse)
             adapter.notifyDataSetChanged()
         }
 
