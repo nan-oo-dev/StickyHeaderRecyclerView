@@ -31,12 +31,13 @@ android {
     libraryVariants.all {
         outputs.all {
             packageLibraryProvider {
-                val separator = "_"
-                val buildTypeName = buildType.name
-                val versionName = "1.0.3"
-                val date = Date()
-                val formattedDate = SimpleDateFormat("ddMMyy_HHmm").format(date)
-                val newAarName = "StickyHeaderRecyclerView$separator$formattedDate$separator$buildTypeName$separator$versionName.aar"
+//                val separator = "_"
+//                val buildTypeName = buildType.name
+//                val versionName = "1.0.3"
+//                val date = Date()
+//                val formattedDate = SimpleDateFormat("ddMMyy_HHmm").format(date)
+//                val newAarName = "StickyHeaderRecyclerView$separator$formattedDate$separator$buildTypeName$separator$versionName.aar"
+                val newAarName = "stickyheaderrecyclerview-release.aar"
                 archiveFileName.set(newAarName)
             }
         }
