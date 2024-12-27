@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">StickyHeaderRecycler</string>
+    <string name="app_name">StickyHeaderRecyclerView</string>
     <string name="button_update">Start Update</string>
     <string name="ascending">Sort Ascending</string>
     <string name="descending">Sort Descending</string>

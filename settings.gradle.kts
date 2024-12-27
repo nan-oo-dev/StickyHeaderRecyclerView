@@ -8,8 +8,11 @@ pluginManagement {
             }
         }
         mavenCentral()
-        mavenLocal()
         gradlePluginPortal()
+
+
+        mavenLocal()
+
     }
 }
 dependencyResolutionManagement {
@@ -17,6 +20,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+
+
         mavenLocal()
         maven {
             url = uri("https://jitpack.io")
@@ -25,6 +30,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "StickyHeaderRecycler"
+rootProject.name = "StickyHeaderRecyclerView"
 include(":app")
 include(":stickyheaderrecyclerview")
