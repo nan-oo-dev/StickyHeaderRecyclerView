@@ -55,6 +55,6 @@ dependencies {
 
     implementation(project(":stickyheaderrecyclerview"))
 
-//    implementation ("com.github.nan-oo-dev:StickyHeaderRecyclerView:1.1")
+//    implementation ("com.github.nan-oo-dev:StickyHeaderRecyclerView:1.0.1")
 
 }
